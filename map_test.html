@@ -14,7 +14,7 @@
 
 <style>
 
-#map { height: 500px; }
+#map { height: 600px; }
 
 </style>
 
@@ -29,13 +29,134 @@
 <script>
 L.TileLayer.prototype.options.referrerPolicy = 'strict-origin-when-cross-origin';
 
-const map = L.map('map').setView([51.505, -0.09], 13);
+var im1 = '1-goebenbruecke'
+var popupContent1 = '1. Goebenbrücke:<br>' + '<a href="' + im1 + '.html' + '" target="_blank"><img src="' + im1 + '-small.jpg' + '" width="200"></a>';
+
+var im2 = '2-goebenradfahrerbruecke'
+var popupContent2 = '2. Goebenradfahrerbrücke:<br>' + '<a href="' + im2 + '.html' + '" target="_blank"><img src="' + im2 + '-small.jpg' + '" width="200"></a>';
+
+var im3 = '3-eimsbuettelerbruecke'
+var popupContent3 = '3. Eimsbüttelerbrücke:<br>' + '<a href="' + im3 + '.html' + '" target="_blank"><img src="' + im3 + '-small.jpg' + '" width="200"></a>';
+
+var im4 = '4-boetelkampbruecke'
+var popupContent4 = '4. Bötelkampbrücke:<br>' + '<a href="' + im4 + '.html" target="_blank"><img src="' + im4 + '-small.jpg" width="200"></a>';
+
+var im5 = '5-sorthmannwegbruecke'
+var popupContent5 = '5. Sorthmannwegbrücke:<br>' + '<a href="' + im5 + '.html" target="_blank"><img src="' + im5 + '-small.jpg" width="200"></a>';
+
+var im6 = '6-mannsteinerbruecke'
+var popupContent6 = '6. Mannsteiner Brücke:<br>' + '<a href="' + im6 + '.html" target="_blank"><img src="' + im6 + '-small.jpg" width="200"></a>';
+
+var im7 = '7-hoheluftbruecke'
+var popupContent7 = '7. Hoheluftbrücke:<br>' + '<a href="' + im7 + '.html" target="_blank"><img src="' + im7 + '-small.jpg" width="200"></a>';
+
+var im8 = '8-klosterbruecke'
+var popupContent8 = '8. Klosterbrücke:<br>' + '<a href="' + im8 + '.html" target="_blank"><img src="' + im8 + '-small.jpg" width="200"></a>';
+
+var im9 = '9-eppendorferbruecke'
+var popupContent9 = '9. Eppendorfer Brücke:<br>' + '<a href="' + im9 + '.html" target="_blank"><img src="' + im9 + '-small.jpg" width="200"></a>';
+
+var im10 = '10-isebekwestbahnbruecke'
+var popupContent10 = '10. Isebek Westbahnbrücke:<br>' + '<a href="' + im10 + '.html" target="_blank"><img src="' + im10 + '-small.jpg" width="200"></a>';
+
+var im11 = '11-isebekostbahnbruecke'
+var popupContent11 = '11. Isebek Ostbahnbrücke:<br>' + '<a href="' + im11 + '.html" target="_blank"><img src="' + im11 + '-small.jpg" width="200"></a>';
+
+var im12 = '12-isebruecke'
+var popupContent12 = '12. Isebrücke:<br>' + '<a href="' + im12 + '.html" target="_blank"><img src="' + im12 + '-small.jpg" width="200"></a>';
+
+var im13 = '13-heilwigbruecke'
+var popupContent13 = '13. Heilwigbrücke:<br>' + '<a href="' + im13 + '.html" target="_blank"><img src="' + im13 + '-small.jpg" width="200"></a>';
+
+var im14 = '14-streekbruecke'
+var popupContent14 = '14. Streekbrücke:<br>' + '<a href="' + im14 + '.html" target="_blank"><img src="' + im14 + '-small.jpg" width="200"></a>';
+
+var im15 = '15-krugkoppelbruecke'
+var popupContent15 = '15. Krugkoppelbrücke:<br>' + '<a href="' + im15 + '.html" target="_blank"><img src="' + im15 + '-small.jpg" width="200"></a>';
+
+var im16 = '16-fernsichtbruecke'
+var popupContent16 = '16. Fernsichtbrücke:<br>' + '<a href="' + im16 + '.html" target="_blank"><img src="' + im16 + '-small.jpg" width="200"></a>';
+
+var im17 = '17-blumenstrassenbruecke'
+var popupContent17 = '17. Blumenstraßenbrücke:<br>' + '<a href="' + im17 + '.html" target="_blank"><img src="' + im17 + '-small.jpg" width="200"></a>';
+
+var im18 = '18-marialouisenbruecke'
+var popupContent18 = '18. Maria-Louisen-Brücke:<br>' + '<a href="' + im18 + '.html" target="_blank"><img src="' + im18 + '-small.jpg" width="200"></a>';
+
+var im19 = '19-werftbruecke'
+var popupContent19 = '19. Werftbrücke:<br>' + '<a href="' + im19 + '.html" target="_blank"><img src="' + im19 + '-small.jpg" width="200"></a>';
+
+var im20 = '20-bellevuebruecke'
+var popupContent20 = '20. Bellevuebrücke:<br>' + '<a href="' + im20 + '.html" target="_blank"><img src="' + im20 + '-small.jpg" width="200"></a>';
+
+const map = L.map('map').setView([53.55, 9.987], 11);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     referrerPolicy: 'strict-origin-when-cross-origin',
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+
+var marker1 = L.marker([53.574763207373415, 9.967147596438753]).addTo(map);
+marker1.bindPopup(popupContent1);
+
+var marker2 = L.marker([53.57484775700571, 9.967384451053304]).addTo(map);
+marker2.bindPopup(popupContent2);
+
+var marker3 = L.marker([53.5732954033471, 9.963762109779829]).addTo(map);
+marker3.bindPopup(popupContent3);
+
+var marker4 = L.marker([53.58281949520817, 9.952830260131845]).addTo(map);
+marker4.bindPopup(popupContent4);
+
+var marker5 = L.marker([53.58360034363869, 9.953356389795713]).addTo(map);
+marker5.bindPopup(popupContent5);
+
+var marker6 = L.marker([53.57609797857089, 9.970374497445475]).addTo(map);
+marker6.bindPopup(popupContent6);
+
+var marker7 = L.marker([53.5784110345295, 9.975909927109141]).addTo(map);
+marker7.bindPopup(popupContent7);
+
+var marker8 = L.marker([53.58098619527187, 9.97976955523278]).addTo(map);
+marker8.bindPopup(popupContent8);
+
+var marker9 = L.marker([53.58361446056377, 9.984158302659878]).addTo(map);
+marker9.bindPopup(popupContent9);
+
+var marker10 = L.marker([53.58439850007865, 9.985884408279253]).addTo(map);
+marker10.bindPopup(popupContent10);
+
+var marker11 = L.marker([53.58445263629263, 9.986168123051087]).addTo(map);
+marker11.bindPopup(popupContent11);
+
+var marker12 = L.marker([53.584837602942834, 9.988285851346978]).addTo(map);
+marker12.bindPopup(popupContent12);
+
+var marker13 = L.marker([53.58456692363309, 9.993960147075278]).addTo(map);
+marker13.bindPopup(popupContent13);
+
+var marker14 = L.marker([53.583670678909705, 9.995421895379646]).addTo(map);
+marker14.bindPopup(popupContent14);
+
+var marker15 = L.marker([53.57994785632664, 9.999139223265233]).addTo(map);
+marker15.bindPopup(popupContent15);
+
+var marker16 = L.marker([53.58078857264766, 10.002703037671234]).addTo(map);
+marker16.bindPopup(popupContent16);
+
+var marker17 = L.marker([53.5843879820105, 9.999935817336668]).addTo(map);
+marker17.bindPopup(popupContent17);
+
+var marker18 = L.marker([53.584687838987485, 9.998135906853769]).addTo(map);
+marker18.bindPopup(popupContent18);
+
+var marker19 = L.marker([53.58517494451144, 9.996371369379212]).addTo(map);
+marker19.bindPopup(popupContent19);
+
+var marker20 = L.marker([53.58263624931782, 10.002802113656983]).addTo(map);
+marker20.bindPopup(popupContent20);
+
 </script>
 
 </body>
